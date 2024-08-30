@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .message {
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .sender1 {
+            background-color: #007bff; /* Mavi arka plan */
+            color: #fff; /* Beyaz metin */
+        }
+        .sender2 {
+            background-color: #28a745; /* Yeşil arka plan */
+            color: #fff; /* Beyaz metin */
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin: 10px auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mesajlar</h1>
+<p>{{ kisio[1] }}</p>
+<ul>
+    {% for message in messages %}
+        {% if message[2] == kisio[0] %}
+            <li class="message sender1">{{ kisio[1] }} tarafından gönderildi: {{ message[1] }}</li>
+        {% else %}
+            {% if kisi1[0] == kisio[0] %}
+                <li class="message sender2">{{ kisi2[1] }} tarafından gönderildi: {{ message[1] }}</li>
+            {% else %}
+                <li class="message sender2">{{ kisi1[1] }} tarafından gönderildi: {{ message[1] }}</li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<form id="select-user-form" action="/send_message" method="post">
+    <label for="message">Mesajınız:</label>
+    <input type="text" id="message" name="message" required>
+    {% if kisio[0] != kisi1[0] %}
+        <input type="hidden" name="gonder" value="{{ kisio[0] }}">
+        <input type="hidden" name="al" value="{{ kisi1[1] }}">
+    {% else %}
+        <input type="hidden" name="gonder" value="{{ kisio[0] }}">
+        <input type="hidden" name="al" value="{{ kisi2[1] }}">
+    {% endif %}
+    <button type="submit">Gönder</button>
+</form>
+
+</body>
+</html>

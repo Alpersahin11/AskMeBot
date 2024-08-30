@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}"> <!-- CSS dosyanızın yolunu belirtin -->
+</head>
+<body>
+
+<div class="user-info">
+    {% if username %}
+        <p class="welcome-msg">Sayın {{ username }}</p>
+        <a href="/" class="logout-link">Çıkış Yap</a>
+</div>
+
+<div class="content">
+    <h1 class="section-title">Metin Girişi</h1>
+    <form id="text-form" action="/process_text" method="post">
+        <div class="input-container">
+            <input type="text" name="text" class="text-input" placeholder="Metin girin..." oninput="showSuggestions(this.value)">
+            <ul id="suggestions" class="suggestions-list"></ul>
+        </div>
+        <button type="submit" id="process-button" class="process-button">İşle</button>
+    </form>
+</div>
+
+
+<div class="content">
+    <h1 class="section-title">Kullanıcıları Seçin</h1>
+    <form id="select-user-form" action="/send_message" method="POST">
+        <ul class="user-list">
+            {% for user in users2 %}
+                {% if user[1] != username %}
+                <li class="user-item">
+                    <input type="radio" id="user_{{ user[0] }}" name="selectedUser" value="{{ user[0] }}" class="user-radio">
+                    <label for="user_{{ user[0] }}" class="user-label">{{ user[1] }}</label>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <input type="hidden" name="userId1" value="{{ username }}">
+
+        <button type="submit" class="send-button">Seçilen Kullanıcıya Mesaj Gönder</button>
+    </form>
+</div>
+
+
+
+<script>
+    const onerilen_kelimeler = {{ onerilen_kelimeler|tojson }};
+
+    function showSuggestions(input) {
+        const inputText = input.toLowerCase();
+        const matchedWords = onerilen_kelimeler.filter(word => word.toLowerCase().startsWith(inputText));
+        const suggestionsList = document.getElementById('suggestions');
+        suggestionsList.innerHTML = '';
+
+        if (inputText.length > 0) {
+            matchedWords.forEach(word => {
+                const listItem = document.createElement('li');
+                listItem.textContent = word;
+                suggestionsList.appendChild(listItem);
+            });
+            suggestionsList.style.display = 'block';
+        } else {
+            suggestionsList.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

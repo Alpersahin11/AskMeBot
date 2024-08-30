@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- site metas -->
+   <title>AskMeBot</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+   <!-- fevicon -->
+   <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+   <!-- font awesome -->
+   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- owl stylesheets -->
+   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+
+
+<body>
+   <!-- banner bg main start -->
+   <div class="banner_bg_main">
+      <!-- header top section start -->
+      <div class="container">
+         <div class="header_section_top">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="custom_menu">
+                     <!-- <ul>
+                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Gift Ideas</a></li>
+                           <li><a href="#">New Releases</a></li>
+                           <li><a href="#">Today's Deals</a></li>
+                           <li><a href="#">Customer Service</a></li>
+                        </ul> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header top section start -->
+      <!-- logo section start -->
+      <div class="logo_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="logo"><a href="index.html"></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- logo section end -->
+      <!-- header section start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="containt_main">
+               <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a href="index.html">ANA SAYFA</a>
+                  <a href="fashion.html">UZMANLAR</a>
+                  <a href="electronic.html">YARDIM</a>
+                  <a href="jewellery.html">HAKKIMIZDA</a>
+               </div>
+               <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
+
+               <div class="main">
+                  <!-- Another variation with a button -->
+                  <div class="input-group">
+                     <input type="text" class="form-control" placeholder="AskMeBot...">
+                     <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button"
+                           style="background-color: #3e4444; border-color: #3e4444"> <!-- search rengi -->
+                           <i class="fa fa-search"></i>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="header_box">
+                  <div class="login_menu">
+                     <ul>
+                        <li><a href="/login">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                              <span class="padding_10">Kullanıcı Giriş</span></a>
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                           <span class="padding_10">Üye Ol</span></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header section end -->
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+         <div class="container">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col-sm-12">
+                           <h1 class="banner_taital">Get Start </h1>
+                           <div class="buynow_bt"><a href="#" style="background-color: #3e4444;">Search Now</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="fashion_section">
+         <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container" >
+                     <h1 class="fashion_taital" style="color: #fff;">AskMeBot</h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+      <!-- <div class="footer_section layout_padding" >
+            <div class="container">
+               <div class="footer_menu" >
+                  <ul>
+                     <li><a href="#"></a>İLETİŞİM</li>
+                     <li><a href="#">KADROMUZ</a></li>
+                     <li><a href="#"></a></li>
+                     <li><a href="#"></a></li>
+                     <li><a href="#"></a></li>
+                  </ul>
+               </div>
+               <div class="location_main">BİZE ILAŞIN: 0372 536 4136 <a href="#"></a></div>
+             
+            </div>
+         </div>
+          -->
+
+      <!-- banner section end -->
+   </div>
+   <!-- banner bg main end -->
+   <!-- electronic section start -->
+
+   <!-- electronic section end -->
+   <!-- footer section start -->
+
+   <!-- footer section end -->
+   <!-- end img start -->
+   <div id="gbt_app-footer-copyright-detail" class="py-3 flex justify-between w-full flex-col md:flex-row items-center"
+      style="background-color: #3e4444;">
+
+      <p id="gbt_app-footer-copyright-detail-text" class="m-0 font-normal text-sm py-2 text-center">
+      <p>
+         &nbsp;
+      </p>
+      </p>
+      <!-- <ul>
+            <li><a href="#" style="background-color: #fff;"></a>İLETİŞİM</li>
+            <li><a href="#">KADROMUZ</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+         </ul> -->
+      <!-- <div style="display: inline-block; margin-right: 20px;" class="location_main">KADROMUZ    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;         İLETİŞİM  <a href=""></a></div> -->
+      <div style="display: inline-block;" class="location_main">HAKKIMIZDA      &nbsp; &nbsp; &nbsp;  KADROMUZ   &nbsp; &nbsp; &nbsp;    BİZE ULAŞIN: 0372 536 4136 <a href=""></a></div>
+      <div id="gbt_app-footer-copyright-detail-social" class="py-2 mr-3 text-center">
+
+         <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/facebook.svg"
+            id="gbt_app-footer-copyright-detail-social-0" width="20" height="20" alt="">
+         <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/instagram.svg"
+            id="gbt_app-footer-copyright-detail-social-1" width="20" height="20" alt="">
+         <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/linkedin.svg"
+            id="gbt_app-footer-copyright-detail-social-2" width="20" height="20" alt="">
+         <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/youtube.svg"
+            id="gbt_app-footer-copyright-detail-social-3" width="20" height="20" alt="">
+         <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/twitter.svg"
+            id="gbt_app-footer-copyright-detail-social-4" width="20" height="20" alt="">
+      </div>
+   </div>
+   <!-- end img end -->
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <script>
+      function openNav() {
+         document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+         document.getElementById("mySidenav").style.width = "0";
+      }
+
+
+   </script>
+
+</body>
+
+</html>

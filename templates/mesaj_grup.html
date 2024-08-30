@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlar</title>
+    <style>
+        .message {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Mesajlar</h1>
+<div id="messages">
+    <form id="select-user-form" action="/ozel_mesaj" method="POST">
+        {% for hoca in hocalar %}
+        <div class="message">
+            <p><strong>Kişi:</strong> {{ hoca[0] }} {{ hoca[1] }}</p>
+            <p><strong>Son mesaj:</strong> {{ hoca[0] }}{{ hoca[1] }}</p>
+            <button type="submit" name="hoca_index" value="{{ hoca[0] }}">mesaj at</button>
+        </div>
+        {% endfor %}
+        <input type="hidden" name="username" value="{{ username }}">
+    </form>
+
+</div>
+</body>
+</html>

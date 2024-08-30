@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlaşma</title>
+    <style>
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            overflow-y: scroll;
+            max-height: 1000px;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .sent {
+            background-color: #e6f2ff;
+            float: right;
+        }
+        .received {
+            background-color: #f0f0f0;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="message-container">
+        {% for message in sohbet %}
+            <div class="message {% if message[-1] == 'users     ' %}sent{% else %}received{% endif %}">
+                <p>{{ message }}</p>
+            </div>
+        <br>
+        {% endfor %}
+    </div>
+
+    <p>
+        {{hoca[0]}}
+    </p>
+    <p>
+        {{kullanici}}
+    </p>
+
+    <p>
+        {{sohbet}}
+    </p>
+
+    <form id="message-form" action="/ozel_mesaj" method="POST">
+    <input type="hidden" name="hoca_index" value="{{hoca[0]}}">
+    <input type="hidden" name="username" value="{{ username }}">
+    <input type="text" id="message-input" name="message" placeholder="Mesajınızı yazın...">
+    <button type="submit">Gönder</button>
+</form>
+</body>
+</html>

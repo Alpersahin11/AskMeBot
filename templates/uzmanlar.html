@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzmanlar</title>
+    <!-- CSS dosyalarını buraya ekleyin -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Font Awesome için -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts için -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <style>
+
+        
+        /* İhtiyacınız olan özel CSS stilleri buraya ekleyin */
+    </style>
+</head>
+<body>
+    <!-- Navbarı buraya ekleyin -->
+    <!-- Header bölümü -->
+    
+ >
+           </div>
+    <!-- <div class="header_section">
+        <div class="container">
+             <div class="containt_main">
+                 Sidenav ve toggle icon -->
+                <!-- <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="index.html">ANA SAYFA</a>
+                    <a href="Uzmanlar.html">UZMANLAR</a>
+                    <a href="electronic.html">YARDIM</a>
+                    <a href="jewellery.html">HAKKIMIZDA</a>
+                </div>
+                <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
+
+                Arama kutusu ve diğer bileşenler 
+                
+            </div> 
+        </div> 
+ -->
+
+
+    <!-- Uzmanlar Bölümü -->
+    <div class="banner_bg_main" > 
+        <div class="container">
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div><br><br><br><br>
+         
+    <div class="uzmanlar_section">
+        <div class="container">
+            <div class="row">
+
+                {% for hoca in hocalar %}
+
+                <div class="col-md-4 mb-4">
+                    <!-- İlk uzman kartı -->
+                    <div class="card h-100" style="background-color: #2b2a29;">
+                        <div class="card-body " style="color:white" >
+                            <h5 class="card-title" style="color:white;font-size: 25px;" >Prof.Dr. {{ hoca[0] }} {{ hoca[1] }}</h5>
+                            <p class="card-text" style="color:white;font-size: 20px;">{{ hoca[2] }}</p>
+                            <!-- İlgili uzmana yönlendiren bir buton ekleyin -->
+                            <a href="#" class="btn btn-primary" style="color:white;">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer bölümü -->
+  
+   
+   <div id="gbt_app-footer-copyright-detail-social" class="py-2 mr-3 text-center" style="background:#2b2a29">
+
+    <div style="display: inline-block;" class="location_main">HAKKIMIZDA      &nbsp; &nbsp; &nbsp;  KADROMUZ   &nbsp; &nbsp; &nbsp;    BİZE ULAŞIN: 0372 536 4136 <a href=""></a></div>
+     <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/facebook.svg"
+        id="gbt_app-footer-copyright-detail-social-0" width="20" height="20" alt="">
+     <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/instagram.svg"
+        id="gbt_app-footer-copyright-detail-social-1" width="20" height="20" alt="">
+     <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/linkedin.svg"
+        id="gbt_app-footer-copyright-detail-social-2" width="20" height="20" alt="">
+     <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/youtube.svg"
+        id="gbt_app-footer-copyright-detail-social-3" width="20" height="20" alt="">
+     <img src="https://static-01-btk.akamaized.net/portal/static/img/icons/social/twitter.svg"
+        id="gbt_app-footer-copyright-detail-social-4" width="20" height="20" alt="">
+  </div>
+
+
+    <!-- JavaScript dosyalarını buraya ekleyin -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/uzmanlar.js"></script>
+    <!-- Özel JavaScript dosyalarını buraya ekleyin -->
+    <script>
+
+function openNav() {
+         document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+         document.getElementById("mySidenav").style.width = "0";
+      }
+
+      window.onclick = function(event) {
+         console.log(event.target)
+         var modal1 = document.getElementById("mySidenav");
+         let banner = document.getElementsByClassName('banner_section')[0];
+         let icon = document.getElementsByClassName('img')[0];
+
+
+            if (event.target != modal1 && event.target != icon) {
+               closeNav();
+            }
+
+         } 
+        // JavaScript kodlarını buraya ekleyin
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlar</title>
+</head>
+<body>
+<h1>Mesajlar</h1>
+<div id="messages">
+    {% for message in messages %}
+    <div class="message">
+        <p>
+        <form action="/hoca_mesaj" method="post">
+        <p>{{message.gonderen_kisi  }} hoca </p>
+            {% if message.gonderen_kisi == 'hoca      ' %}
+            <button type="submit" name="username" value="{{ message.alici_isim }}">
+                {{ message.alici_isim }}
+            </button>
+            {% else %}
+            <button type="submit" name="username" value="{{ message.gonderici_isim }}">
+                {{ message.gonderici_isim }}
+            </button>
+            {% endif %}
+            <p> kişisi <strong>{{ message.icerik }}</strong> yazdı </p>
+
+        </form>
+
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
