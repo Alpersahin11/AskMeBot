@@ -56,8 +56,7 @@ pip install -r requirements.txt
 Uygulamayı çalıştırın:
 
 bash
-Kopyala
-Düzenle
+
 python app.py
 Tarayıcınızda şu adrese gidin: http://127.0.0.1:5000
 
